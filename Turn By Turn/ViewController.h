@@ -15,9 +15,10 @@
 {
     CLGeocoder *geocoder;
 }
-@property (nonatomic, strong) CLGeocoder *geocoder;
-@property (weak, nonatomic) IBOutlet MKMapView *mapview;
-@property (weak, nonatomic) IBOutlet UITextField *recherche;
+@property (nonatomic, strong) CLGeocoder            *geocoder;
+@property (weak, nonatomic) IBOutlet MKMapView      *mapview;
+@property (weak, nonatomic) IBOutlet UITextField    *recherche;
+@property (weak, nonatomic) IBOutlet UILabel        *laVitesse;
 
 @end
 
