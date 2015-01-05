@@ -20,6 +20,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbg-Kj-ach">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zr-iq-72K">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -44,6 +49,7 @@
                         </textField>
                     </navigationItem>
                     <connections>
+                        <outlet property="laVitesse" destination="8zr-iq-72K" id="fAt-66-7ub"/>
                         <outlet property="launchNaviationButton" destination="NJX-uL-gW4" id="4xM-9e-zNZ"/>
                         <outlet property="mapview" destination="Bbg-Kj-ach" id="rt4-Fa-18P"/>
                         <outlet property="recherche" destination="i5r-Vd-q6Z" id="pso-zf-eJ4"/>
@@ -51,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="417"/>
+            <point key="canvasLocation" x="460" y="409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sep-MS-4L2">

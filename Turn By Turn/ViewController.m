@@ -14,6 +14,8 @@
 @property (nonatomic, strong)MKPolyline                 *routeOverlay;
 @property (nonatomic, strong)MKRoute                    *currentRoute;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem    *launchNaviationButton;
+@property (weak, nonatomic) IBOutlet UILabel *laVitesse;
+
 
 
 - (void)showAlertNoLocationAuthorized;
@@ -52,7 +54,10 @@
         [self showAlertNoLocationAuthorized];
     }
     else {
+        // Position de l'utilisateur
         self.mapview.showsUserLocation = YES;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = 10.0f;
     }
     
     MKUserTrackingBarButtonItem *trackButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapview];
@@ -104,6 +109,15 @@
     }
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    if (newLocation.speed > 0.0)
+    {
+        NSString* vitesseString = [NSString stringWithFormat:@"Votre vitesse : %0.1f m/s",newLocation.speed];
+        _laVitesse.text = vitesseString;
+    }
+}
 #pragma mark - AlertView
 //afficher la fenetre d'alert
 - (void)showAlertNoLocationAuthorized
